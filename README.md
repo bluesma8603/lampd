@@ -2,7 +2,11 @@
 
 [![CI](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml/badge.svg)](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml)
 
+![Lampd Screenshot](docs/screenshots/screenshot.png)
+
 Lampd is a Linux desktop app that helps you manage local development services from a simple dashboard.
+
+> **Inspiration:** Lampd was inspired by [mysql-control](https://github.com/wildanfadh/mysql-control), a lightweight MySQL service controller for Linux.
 
 If you are new to Linux and often feel lost with commands like `systemctl`, `journalctl`, `apt`, `dnf`, or `pacman`, Lampd is designed to make those tasks easier.
 
