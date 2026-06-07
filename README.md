@@ -1,5 +1,7 @@
 # Lampd
 
+[![CI](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml/badge.svg)](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml)
+
 Lampd is a Linux desktop app that helps you manage local development services from a simple dashboard.
 
 If you are new to Linux and often feel lost with commands like `systemctl`, `journalctl`, `apt`, `dnf`, or `pacman`, Lampd is designed to make those tasks easier.
@@ -193,8 +195,11 @@ npm run tauri build
 
 Typical build output includes:
 
-- `.deb`
+- `.deb` (Debian / Ubuntu)
+- `.rpm` (Fedora / RHEL)
 - `AppImage`
+
+You can also download pre-built packages from the [latest release](https://github.com/wildanfadh/lampd/releases/latest).
 
 ## Example Beginner Workflows
 
