@@ -20,7 +20,7 @@ jobs:
 
       - run: npm ci
       - run: npm run lint
-      - run: npx vite build
+      - run: npm run build
 
   rust:
     name: Rust (build)
